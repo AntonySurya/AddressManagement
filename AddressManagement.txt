@@ -1,0 +1,30 @@
+package streams;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class splitter {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String str="IIT Delhi,Purani Delhi,Delhi,Delhi,India";
+		AddressManagement(str);
+	}
+	public static void AddressManagement(String str)
+	{
+		
+		String []s=str.split(",");
+		ArrayList<String> address=new ArrayList<>();
+		for(String a:s)
+		{
+			address.add(a);
+		}
+		Set<String> Raddress=new LinkedHashSet(address);
+		ArrayList<String> Caddress=new ArrayList(Raddress);
+		for(String b:Caddress)
+		{
+			System.out.print(b+",");
+		}
+	}
+}
